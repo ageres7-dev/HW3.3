@@ -14,11 +14,10 @@ struct StarterView: View {
     
     @AppStorage("isRegistered") var isRegistered = false
     
-    
     var body: some View {
         Group {
             if isRegistered {
-                ContentView()
+                TimerView()
             } else {
                 RegisterdView()
             }
