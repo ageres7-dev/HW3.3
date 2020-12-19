@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct StarterView: View {
-    //Видимо я все сделал неправильно. Если использовать вот это
+    //Видимо я все сделал неправильно в UserManager. Если использовать вот это
     //    @EnvironmentObject var user: UserManager
-    //то переход на следующий экран не работает..
+    //то переход на следующий экран срабатывает только при перезапуске приложения
     
     @AppStorage("isRegistered") var isRegistered = false
     
@@ -28,6 +28,5 @@ struct StarterView: View {
 struct StarterView_Previews: PreviewProvider {
     static var previews: some View {
         StarterView()
-//            .environmentObject(UserManager())
     }
 }

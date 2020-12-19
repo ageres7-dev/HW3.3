@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A57CD4C6258D3D3B000292D9 /* CountText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57CD4C5258D3D3B000292D9 /* CountText.swift */; };
-		A5F11C71258E8E8B008D85B5 /* Extension + View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F11C70258E8E8B008D85B5 /* Extension + View.swift */; };
 		A8F885BB258A7F9B009F31A3 /* StateAndDataFlowAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F885BA258A7F9B009F31A3 /* StateAndDataFlowAppApp.swift */; };
 		A8F885BD258A7F9B009F31A3 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F885BC258A7F9B009F31A3 /* TimerView.swift */; };
 		A8F885BF258A7FA0009F31A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F885BE258A7FA0009F31A3 /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 
 /* Begin PBXFileReference section */
 		A57CD4C5258D3D3B000292D9 /* CountText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountText.swift; sourceTree = "<group>"; };
-		A5F11C70258E8E8B008D85B5 /* Extension + View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + View.swift"; sourceTree = "<group>"; };
 		A8F885B7258A7F9B009F31A3 /* StateAndDataFlowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateAndDataFlowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F885BA258A7F9B009F31A3 /* StateAndDataFlowAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAndDataFlowAppApp.swift; sourceTree = "<group>"; };
 		A8F885BC258A7F9B009F31A3 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				A57CD4C5258D3D3B000292D9 /* CountText.swift */,
 				A8F885CA258A88A1009F31A3 /* TimeCounter.swift */,
 				A8F885D0258A90EC009F31A3 /* UserManager.swift */,
-				A5F11C70258E8E8B008D85B5 /* Extension + View.swift */,
 				A8F885BE258A7FA0009F31A3 /* Assets.xcassets */,
 				A8F885C3258A7FA0009F31A3 /* Info.plist */,
 				A8F885C0258A7FA0009F31A3 /* Preview Content */,
@@ -160,7 +157,6 @@
 				A8F885CB258A88A1009F31A3 /* TimeCounter.swift in Sources */,
 				A8F885BD258A7F9B009F31A3 /* TimerView.swift in Sources */,
 				A8F885D4258A937F009F31A3 /* StarterView.swift in Sources */,
-				A5F11C71258E8E8B008D85B5 /* Extension + View.swift in Sources */,
 				A8F885CE258A8F53009F31A3 /* RegisterdView.swift in Sources */,
 				A8F885D1258A90EC009F31A3 /* UserManager.swift in Sources */,
 				A8F885BB258A7F9B009F31A3 /* StateAndDataFlowAppApp.swift in Sources */,

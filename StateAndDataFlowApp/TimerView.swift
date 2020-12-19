@@ -24,10 +24,13 @@ struct TimerView: View {
             VStack {
                 Spacer(minLength: 300)
                 
-                TimerButton(timer: timer)
+                BestStyleButton(action: { timer.startTimer() },
+                                title: "\(timer.buttonTitle)",
+                                background: .red)
                 Spacer()
-                
-                LogOutButton(action: logOutAction)
+                BestStyleButton(action: logOutAction,
+                                title: "LogOut",
+                                background: .blue)
             }
             .padding()
             
@@ -43,56 +46,37 @@ extension TimerView {
     }
 }
 
-struct TimerButton: View {
-    @StateObject var timer: TimeCounter
-    
-    var body: some View {
-        Button(action: { timer.startTimer() }) {
-            Text("\(timer.buttonTitle)")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-        }
-//        .frame(width: 200, height: 60)
-//        .background(Color.red)
-//        .cornerRadius(20)
-//        .overlay(
-//            RoundedRectangle(cornerRadius: 20)
-//                .stroke(Color.black, lineWidth: 4)
-//        )
-        .setStyleButtonWithFrame(background: .red)
-    }
-}
-
-struct LogOutButton: View {
+struct BestStyleButton: View {
     let action: () -> Void
+    let title: String
+    let background: Color
     
     var body: some View {
         Button(action: action) {
-            Text("LogOut")
+            Text(title)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
         }
-        .setStyleButtonWithFrame(background: .blue)
+        .frame(width: 200, height: 60)
+        .background(background)
+        .cornerRadius(20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.black, lineWidth: 4)
+        )
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
             .environmentObject(UserManager())
     }
 }
 
-struct LogOutButton_Previews: PreviewProvider {
+struct BestStyleButton_Previews: PreviewProvider {
     static var previews: some View {
-        LogOutButton(action: {})
-    }
-}
-
-struct TimerButton_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerButton(timer: TimeCounter())
+        BestStyleButton(action: {}, title: "Button", background: .red)
     }
 }
