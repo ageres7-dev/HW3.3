@@ -12,7 +12,7 @@ struct StateAndDataFlowAppApp: App {
     var body: some Scene {
         WindowGroup {
             StarterView()
-                .environmentObject(UserManager())
+//                .environmentObject(UserManager())
         }
     }
 }

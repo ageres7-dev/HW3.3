@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct RegisterdView: View {
-    @EnvironmentObject var user: UserManager
-    @State private var name = ""
+    @State private var tempName = ""
+    @AppStorage("isRegistered") var isRegistered = false
+    @AppStorage("name") var name = ""
   
     var body: some View {
         VStack {
@@ -18,11 +19,11 @@ struct RegisterdView: View {
             HStack {
                 Spacer()
                 
-                TextField("Enter your name", text: $name)
+                TextField("Enter your name", text: $tempName)
                     .multilineTextAlignment(.center)
                 Spacer()
                 
-                CountText(text: name, isValidName: isValidName)
+                CountText(text: tempName, isValidName: isValidName)
             }
 
             LogInButton(action: registerUser, disabled: !isValidName)
@@ -37,13 +38,14 @@ struct RegisterdView: View {
 
 extension RegisterdView {
     private var isValidName: Bool {
-        name.count > 2 ? true : false
+        tempName.count > 2 ? true : false
     }
     
     private func registerUser() {
-        if !name.isEmpty, isValidName {
-            user.name = name
-            user.isRegistered = true
+        if !tempName.isEmpty, isValidName {
+            name = tempName
+            isRegistered = true
+        
         }
     }
 }
@@ -68,7 +70,7 @@ struct LogInButton: View {
 struct RegisterdView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterdView()
-            .environmentObject(UserManager())
+//            .environmentObject(UserManager())
     }
 }
 

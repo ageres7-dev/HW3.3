@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct TimerView: View {
-    @EnvironmentObject var user: UserManager
+//    @EnvironmentObject var user: UserManager
     @StateObject private var timer = TimeCounter()
+    @AppStorage("isRegistered") var isRegistered = false
+    @AppStorage("name") var name = ""
     
     var body: some View {
         VStack {
-            Text("Hi, \(user.name)")
+            Text("Hi, \(name)")
                 .font(.largeTitle)
                 .offset(x: 0, y: 100)
             Text("\(timer.counter)")
@@ -41,8 +43,8 @@ struct TimerView: View {
 
 extension TimerView {
     private func logOutAction() -> Void {
-        user.isRegistered = false
-        user.name = ""
+        isRegistered = false
+        name = ""
     }
 }
 
@@ -71,7 +73,7 @@ struct BestStyleButton: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
-            .environmentObject(UserManager())
+//            .environmentObject(UserManager())
     }
 }
 

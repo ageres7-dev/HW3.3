@@ -6,8 +6,8 @@
 //
 import SwiftUI
 //import Combine
-
-class UserManager: ObservableObject {
-    @AppStorage("isRegistered") var isRegistered = false
-    @AppStorage("name") var name = ""
-}
+//
+//class UserManager: ObservableObject {
+//    @AppStorage("isRegistered") var isRegistered = false
+//    @AppStorage("name") var name = ""
+//}
