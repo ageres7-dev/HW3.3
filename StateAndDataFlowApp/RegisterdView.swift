@@ -11,7 +11,6 @@ struct RegisterdView: View {
     @EnvironmentObject var user: UserManager
     @State private var name = ""
   
-    
     var body: some View {
         VStack {
             Spacer()
@@ -21,24 +20,22 @@ struct RegisterdView: View {
                 
                 TextField("Enter your name", text: $name)
                     .multilineTextAlignment(.center)
-                
                 Spacer()
+                
                 CountText(text: name, isValidName: isValidName)
             }
 
-            Button(action: registerUser) {
-                HStack {
-                    Image(systemName: "checkmark.circle")
-                    Text("Ok")
-                }
-            }.disabled(!isValidName)
+            LogInButton(action: registerUser, disabled: !isValidName)
             
             Spacer()
             
         }
         .padding()
     }
-    
+}
+
+
+extension RegisterdView {
     private var isValidName: Bool {
         name.count > 2 ? true : false
     }
@@ -52,6 +49,22 @@ struct RegisterdView: View {
 }
 
 
+struct LogInButton: View {
+    let action: () -> Void
+    let disabled: Bool
+    
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                Image(systemName: "checkmark.circle")
+                Text("Ok")
+            }
+        }
+        .disabled(disabled)
+    }
+}
+
+
 struct RegisterdView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterdView()
@@ -59,3 +72,9 @@ struct RegisterdView_Previews: PreviewProvider {
     }
 }
 
+
+struct LogInButton_Previews: PreviewProvider {
+    static var previews: some View {
+        LogInButton(action: {}, disabled: false)
+    }
+}

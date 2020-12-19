@@ -21,8 +21,7 @@ struct ContentView: View {
                 .offset(x: 0, y: 200)
             Spacer()
             
-           
-            
+        
 //            Button("exit") {
 //                user.isRegistered = false
 //                user.name = ""
